@@ -41,15 +41,29 @@ let timer = setInterval(function() {
 
       let timeDifferenceObj = getTimeDifference(startDate, endDate);
       
-      let displayDays = timeDifferenceObj.rDays
+      let displayDays = timeDifferenceObj.rDays;
       if (displayDays < 10) {
         displayDays = "0" + displayDays;
       }
 
+      let displayHours = timeDifferenceObj.rHours;
+      if (displayHours < 10) {
+        displayHours = "0" + displayHours;
+      }
+
+      let displayMins = timeDifferenceObj.rMinutes;
+      if (displayMins < 10) {
+        displayMins = "0" + displayMins;
+      }
+
+      let displaySecs = timeDifferenceObj.rSeconds;
+      if (displaySecs  < 10) {
+        displaySecs = "0" + displaySecs ;
+      }
 
       timerDayEl.textContent =  displayDays;
-      timerHourEl.textContent = timeDifferenceObj.rHours;
-      timerMinEl.textContent = timeDifferenceObj.rMinutes;
-      timerSecEl.textContent = timeDifferenceObj.rSeconds;
+      timerHourEl.textContent = displayHours;
+      timerMinEl.textContent = displayMins;
+      timerSecEl.textContent = displaySecs;
 
   }, 1000)
